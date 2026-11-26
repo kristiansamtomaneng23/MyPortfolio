@@ -127,28 +127,6 @@ h1, h2, h3, h4, .navbar-brand { font-family: "Manrope", sans-serif; }
 .education-card p { color: var(--muted); margin-bottom: 5px; }
 .education-card .school-name { color: #34453a; font-weight: 600; line-height: 1.7; margin-top: 14px; }
 
-.github-section { background: white; }
-.github-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
-.github-card {
-  min-height: 220px;
-  border: 1px solid var(--line);
-  border-radius: 13px;
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 22px;
-  transition: 0.2s ease;
-}
-.github-card:hover { transform: translateY(-4px); box-shadow: 0 15px 30px #344a2510; border-color: #b9d69b; }
-.github-card h3 { font-size: 1.2rem; font-weight: 800; overflow-wrap: anywhere; }
-.github-card p { color: var(--muted); line-height: 1.6; margin-bottom: 0; }
-.github-card-meta { display: flex; flex-wrap: wrap; gap: 8px 14px; color: var(--muted); font-size: 0.8rem; }
-.github-card > a { color: #537b2d; font-weight: 700; text-decoration: none; }
-.github-card > a:hover { color: #354f20; }
-.github-status { color: var(--muted); text-align: center; }
-.github-status a { color: #537b2d; font-weight: 700; }
-
 .contact-section { background-color: #0b0912; color: #ffffff; }
 .contact-title { font-size: 3.5rem; font-weight: 700; color: #b8b8c2; }
 .contact-link { display: flex; align-items: center; gap: 16px; color: #e2e2e8; text-decoration: none; font-size: 1.15rem; transition: color 0.2s ease; }
@@ -166,7 +144,6 @@ h1, h2, h3, h4, .navbar-brand { font-family: "Manrope", sans-serif; }
 
 @media (max-width: 991px) {
   .skills-grid { grid-template-columns: repeat(3, 1fr); }
-  .github-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .navbar-collapse { padding-top: 15px; }
   .nav-link { padding: 10px 0; }
   .hero-section {
@@ -183,7 +160,6 @@ h1, h2, h3, h4, .navbar-brand { font-family: "Manrope", sans-serif; }
   .section { padding: 75px 0; }
   .hero-section { padding: 125px 0 70px; }
   .skills-grid { grid-template-columns: repeat(2, 1fr); }
-  .github-grid { grid-template-columns: 1fr; }
   .timeline:before { left: 8px; }
   .timeline-item { grid-template-columns: 22px 1fr; gap: 15px; }
   .timeline-date { grid-column: 2; text-align: left; }

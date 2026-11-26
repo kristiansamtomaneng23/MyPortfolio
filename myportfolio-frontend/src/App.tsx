@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import AOS from "aos";
 import { skills } from "./data/skills";
 import { ContactSection } from "./components/ContactSection";
-import { GitHubProjects } from "./components/GitHubProjects";
 
 export function App() {
   const [navOpen, setNavOpen] = useState(false);
@@ -33,7 +32,6 @@ export function App() {
               <li className="nav-item"><a className="nav-link" href="#skills" onClick={() => setNavOpen(false)}>Skills</a></li>
               <li className="nav-item"><a className="nav-link" href="#experience" onClick={() => setNavOpen(false)}>Experience</a></li>
               <li className="nav-item"><a className="nav-link" href="#education" onClick={() => setNavOpen(false)}>Education</a></li>
-              <li className="nav-item"><a className="nav-link" href="#github" onClick={() => setNavOpen(false)}>GitHub</a></li>
               <li className="nav-item"><a className="nav-link nav-contact" href="#contact" onClick={() => setNavOpen(false)}>Contact</a></li>
             </ul>
           </div>
@@ -172,7 +170,6 @@ export function App() {
           </div>
         </section>
 
-        <GitHubProjects />
         <ContactSection />
       </main>
 
