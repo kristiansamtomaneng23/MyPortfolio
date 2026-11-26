@@ -4,11 +4,11 @@ EXPOSE 10000
 
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 WORKDIR /src
-COPY ["PortfolioApi/PortfolioApi.csproj", "PortfolioApi/"]
-RUN dotnet restore "PortfolioApi/PortfolioApi.csproj"
+COPY ["PortfolioApi.csproj", "./"]
+RUN dotnet restore "PortfolioApi.csproj"
 
 COPY . .
-WORKDIR /src/PortfolioApi
+WORKDIR /src
 RUN dotnet publish "PortfolioApi.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final

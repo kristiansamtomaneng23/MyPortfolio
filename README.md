@@ -31,7 +31,7 @@ The frontend uses `VITE_API_URL` for the API base URL and defaults to `http://lo
 
 Create a Render Web Service from this repository and configure it to use Docker:
 
-- Root Directory: `myportfolio-backend`
+- Root Directory: `myportfolio-backend/PortfolioApi`
 - Dockerfile Path: `./Dockerfile`
 - Environment variable: `Database__Password` (set this to the PostgreSQL password in Render; do not commit it)
 
