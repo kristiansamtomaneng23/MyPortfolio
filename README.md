@@ -1,32 +1,28 @@
-# React + TypeScript + Vite
+# MyPortfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+This repository contains the full-stack portfolio application:
 
-Currently, two official plugins are available:
+- `myportfolio-frontend/` - React, TypeScript, and Vite website
+- `myportfolio-backend/PortfolioApi/` - ASP.NET Core API backed by PostgreSQL
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Run locally
 
-## React Compiler
+Start the API from `myportfolio-backend/PortfolioApi`:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```powershell
+Set-Location myportfolio-backend\PortfolioApi
+$env:Database__Password = "<your-database-password>"
+dotnet run
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+The API listens on `http://localhost:5059` in the HTTP launch profile. The password is supplied through the environment and should not be committed.
+
+In another terminal, start the frontend from `myportfolio-frontend`:
+
+```powershell
+Set-Location myportfolio-frontend
+npm ci
+npm run dev
+```
+
+The frontend uses `VITE_API_URL` for the API base URL and defaults to `http://localhost:5059`.

@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from "react";
 
-const apiBaseUrl = import.meta.env.VITE_API_BASE_URL ?? "http://localhost:5059";
+const apiBaseUrl = import.meta.env.VITE_API_URL ?? "http://localhost:5059";
 
 export function ContactSection() {
   const [fullName, setFullName] = useState("");
