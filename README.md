@@ -34,5 +34,6 @@ Create a Render Web Service from this repository and configure it to use Docker:
 - Root Directory: `myportfolio-backend`
 - Dockerfile Path: `./Dockerfile`
 - Environment variable: `Database__Password` (set this to the PostgreSQL password in Render; do not commit it)
+- Environment variable: `Frontend__Origin` (the frontend's full origin, e.g. `https://your-frontend.onrender.com`, with no trailing slash)
 
-The container listens on Render's `PORT` value, defaulting to `10000` locally. After deploying the API, set the frontend's `VITE_API_URL` to the Render service URL. The API currently allows browser requests from `http://localhost:5173`; update its CORS origin in `myportfolio-backend/Program.cs` to your deployed frontend URL before using it from a production browser.
+The container listens on Render's `PORT` value, defaulting to `10000` locally. In the frontend Render service, set `VITE_API_URL` to the backend service URL (for example, `https://your-backend.onrender.com`, with no `/api` suffix) and redeploy the frontend so Vite includes the value in its build. The backend allows requests from `http://localhost:5173` and the origin configured by `Frontend__Origin`.

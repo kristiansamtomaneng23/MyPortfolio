@@ -13,6 +13,15 @@ var npgsqlConnectionString = new NpgsqlConnectionStringBuilder(connectionString)
 {
     Password = databasePassword
 }.ConnectionString;
+var frontendOrigin = builder.Configuration["Frontend:Origin"];
+if (string.IsNullOrWhiteSpace(frontendOrigin))
+{
+    frontendOrigin = "http://localhost:5173";
+}
+else
+{
+    frontendOrigin = frontendOrigin.TrimEnd('/');
+}
 
 // 1. Register PostgreSQL DbContext with Dependency Injection
 builder.Services.AddScoped<AppDbContext>(serviceProvider =>
@@ -34,7 +43,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReactApp", policy =>
     {
-        policy.WithOrigins("http://localhost:5173")
+        policy.WithOrigins("http://localhost:5173", frontendOrigin)
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
